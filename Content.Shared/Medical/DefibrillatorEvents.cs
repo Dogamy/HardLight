@@ -37,3 +37,15 @@ public sealed class TargetBeforeDefibrillatorZapsEvent : BeforeDefibrillatorZaps
 {
     public TargetBeforeDefibrillatorZapsEvent(EntityUid entityUsingDefib, EntityUid defib, EntityUid defibtarget) : base(entityUsingDefib, defib, defibtarget) { }
 }
+
+[ByRefEvent]
+public record struct DefibrillationAttemptEvent(bool Cancelled = false) : IInventoryRelayEvent
+{
+    SlotFlags IInventoryRelayEvent.TargetSlots => SlotFlags.WITHOUT_POCKET;
+}
+
+[ByRefEvent]
+public record struct AnalyzeUnrevivableAttemptEvent(bool Cancelled = false) : IInventoryRelayEvent
+{
+    SlotFlags IInventoryRelayEvent.TargetSlots => SlotFlags.WITHOUT_POCKET;
+}
