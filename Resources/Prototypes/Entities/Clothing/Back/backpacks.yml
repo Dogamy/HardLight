@@ -20,7 +20,6 @@
     maxItemSize: Huge
     blacklist:
       components:
-      - StorageFill
       - PresetIdCard
       - IdCard
       - Access
