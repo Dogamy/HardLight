@@ -10,18 +10,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakHelldiver
-  name: salvage pure loality cape
-  description: A representation of the thankfulness of those infinite crew whose wealthy existence we strive to ensure.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Neck/Cloaks/helldiver.rsi
-  - type: StealTarget
-    stealGroup: HeadCloak
-
-- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakResonant
   name: resonant cape
@@ -31,25 +19,3 @@
     sprite: _Goobstation/Clothing/Neck/Cloaks/breverb.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Neck/Cloaks/breverb.rsi
-
-- type: entity
-  parent: [ ClothingNeckBase, BaseMagicalContraband ]
-  id: ClothingNeckCloakCarp
-  name: carp cloak
-  description: Getting up to some fishy business are we?
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Neck/Cloaks/carpcloak.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/Neck/Cloaks/carpcloak.rsi
-
-- type: entity
-  parent: [ ClothingNeckBase, BaseMagicalContraband ]
-  id: ClothingNeckCloakCarpAlt
-  name: carp cloak
-  description: Restricted to extraterrestrial entities. That means NOT you.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Neck/Cloaks/carpcloakalt.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/Neck/Cloaks/carpcloakalt.rsi
