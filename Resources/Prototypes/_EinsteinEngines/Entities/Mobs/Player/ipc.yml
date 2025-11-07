@@ -9,7 +9,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
-    - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
+    # - map: [ "enum.HumanoidVisualLayers.TailBehind" ] Layer does not exist yet, HL
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
