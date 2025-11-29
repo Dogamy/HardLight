@@ -78,7 +78,7 @@ public abstract class SharedXenoMeleeSystem : EntitySystem
 
         // Single forward ray from user towards target to simplify hit detection.
         var ray = new CollisionRay(userCoords.Position, dir.Normalized(), AttackMask);
-        var hits = _physics.IntersectRayWithPredicate(transform.MapID, ray, xeno.Comp.TailRange, uid => uid == xeno.Owner || !HasComp<MobStateComponent>(uid), false);
+        var hits = _physics.IntersectRayWithPredicate(transform.MapID, ray, xeno.Comp.TailRange, uid => uid != xeno.Owner && HasComp<MobStateComponent>(uid), false);
         var results = hits.Select(r => r.HitEntity).Distinct().ToList();
 
         // TODO CM14 sounds
