@@ -392,14 +392,18 @@
     damageCoefficient: 0.5
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
+      coefficients: #same stats as goliath hardsuit
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.5
         Radiation: 0.3
-        Caustic: 0.7
+        Caustic: 0.8
+        Heat: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLuxmax
+  - type: HarpyHideWings # Frontier, needed for Harpies
+  - type: StaticPrice # Frontier
+    vendPrice: 7500
