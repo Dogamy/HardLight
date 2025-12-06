@@ -519,8 +519,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
-        // Calculate appraisal cost for the loaded ship
-        var appraisalCost = (int)_pricing.AppraiseGrid(shuttleUid, null);
+        // Calculate appraisal cost for the loaded ship (charge 70% of appraisal)
+        var fullAppraisal = _pricing.AppraiseGrid(shuttleUid, null);
+        var appraisalCost = (int) MathF.Round((float) fullAppraisal * 0.7f);
 
         // Check if player has a bank account and session to charge them
         if (!_player.TryGetSessionByEntity(player, out var playerSession))
@@ -537,29 +538,44 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
-        // Calculate the new balance after charging
+        // Cooldown: charge at most once every 5 minutes per player
+        var now = _timing.CurTime;
+        var cooldown = TimeSpan.FromMinutes(5);
+        var chargedRecently = _lastLoadCharge.TryGetValue(player, out var lastCharge) && (now - lastCharge) < cooldown;
+
         int currentBalance = bankAccount.Balance;
         int newBalance = currentBalance - appraisalCost;
 
-        // Force charge the player - allow going into debt
-        if (!_bank.TryBankWithdrawAllowDebt(player, appraisalCost))
+        if (!chargedRecently)
         {
-            // This should rarely happen (only if no session/prefs/etc)
-            ConsolePopup(player, Loc.GetString("shipyard-console-load-failed"));
-            PlayDenySound(player, uid, component);
-            return;
-        }
+            // Force charge the player - allow going into debt
+            if (!_bank.TryBankWithdrawAllowDebt(player, appraisalCost))
+            {
+                // This should rarely happen (only if no session/prefs/etc)
+                ConsolePopup(player, Loc.GetString("shipyard-console-load-failed"));
+                PlayDenySound(player, uid, component);
+                return;
+            }
 
-        // Notify player of the charge and their new balance
-        if (newBalance < 0)
-        {
-            ConsolePopup(player, Loc.GetString("shipyard-console-load-success-debt",
-                ("ship", name), ("cost", appraisalCost), ("debt", -newBalance)));
+            _lastLoadCharge[player] = now;
+
+            // Notify player of the charge and their new balance
+            if (newBalance < 0)
+            {
+                ConsolePopup(player, Loc.GetString("shipyard-console-load-success-debt",
+                    ("ship", name), ("cost", appraisalCost), ("debt", -newBalance)));
+            }
+            else
+            {
+                ConsolePopup(player, Loc.GetString("shipyard-console-load-success-charged",
+                    ("ship", name), ("cost", appraisalCost)));
+            }
         }
         else
         {
-            ConsolePopup(player, Loc.GetString("shipyard-console-load-success-charged",
-                ("ship", name), ("cost", appraisalCost)));
+            // Skip charge due to cooldown; inform player
+            ConsolePopup(player, Loc.GetString("shipyard-console-load-success-nocharge",
+                ("ship", name), ("remaining", (cooldown - (now - lastCharge)).ToString("m\':\'ss"))));
         }
 
         // Important: Treat loaded ships like independent shuttles, not part of the console's station.
