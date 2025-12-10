@@ -32,7 +32,7 @@
     maxVol: 250
     reVol: 50
     reHunger: 1
-    reagentid: Pomelustine
+    ReagentId: Pomelustine
   - type: Sprite
     drawdepth: Mobs
     sprite: _Floof/Mobs/Animals/elemental.rsi
@@ -54,7 +54,7 @@
     maxVol: 250
     reVol: 50
     reHunger: 1
-    reagentid: Philterex
+    ReagentId: Philterex
   - type: Sprite
     drawdepth: Mobs
     sprite: _Floof/Mobs/Animals/elemental.rsi
@@ -76,7 +76,7 @@
     maxVol: 250
     reVol: 50
     reHunger: 1
-    reagentid: Libidozenithizine
+    ReagentId: Libidozenithizine
   - type: Sprite
     drawdepth: Mobs
     sprite: _Floof/Mobs/Animals/elemental.rsi
