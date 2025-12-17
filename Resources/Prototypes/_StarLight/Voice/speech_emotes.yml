@@ -41,3 +41,26 @@
     - wurbles.
     - wurbles!
     - wurbles?
+
+# Provide an emote for 'Hisses' to satisfy sound mappings and references.
+- type: emote
+  id: Hisses
+  name: chat-emote-name-hiss
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-hiss"]
+  chatTriggers:
+    - hiss
+    - hiss.
+    - hiss!
+    - hiss?
+    - hisses
+    - hisses.
+    - hisses!
+    - hisses?
