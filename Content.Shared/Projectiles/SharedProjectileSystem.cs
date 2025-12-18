@@ -192,9 +192,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             var shooterName = ToPrettyString(shooterOrWeapon);
             var targetName = ToPrettyString(target);
             var damageAmount = modifiedDamage.GetTotal();
-            _adminLogger.Add(LogType.BulletHit,
+            /* _adminLogger.Add(LogType.BulletHit,
                 HasComp<ActorComponent>(target) ? LogImpact.Extreme : LogImpact.High,
-                $"Projectile {projectileName:projectile} shot by {shooterName:source} hit {targetName:target} and dealt {damageAmount:damage} damage");
+                $"Projectile {projectileName:projectile} shot by {shooterName:source} hit {targetName:target} and dealt {damageAmount:damage} damage"); */
         }
 
         if (!deleted)

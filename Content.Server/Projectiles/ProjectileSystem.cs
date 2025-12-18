@@ -274,9 +274,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
                         _color.RaiseEffect(Color.Red, new List<EntityUid> { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
                     }
 
-                    _adminLogger.Add(LogType.BulletHit,
+                    /* _adminLogger.Add(LogType.BulletHit,
                         HasComp<ActorComponent>(hitEntity) ? LogImpact.Extreme : LogImpact.High,
-                        $"Projectile {ToPrettyString(uid):projectile} (raycast) shot by {ToPrettyString(projectileComp.Shooter!.Value):user} hit {otherName:target} and dealt {modifiedDamage.GetTotal():damage} damage");
+                        $"Projectile {ToPrettyString(uid):projectile} (raycast) shot by {ToPrettyString(projectileComp.Shooter!.Value):user} hit {otherName:target} and dealt {modifiedDamage.GetTotal():damage} damage"); */
                 }
 
                 // Penetration Logic
