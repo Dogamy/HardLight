@@ -12,7 +12,6 @@ namespace Content.IntegrationTests.Tests.Destructible
 {
     public sealed class DestructibleDestructionTest
     {
-        private static readonly ProtoId<DamageGroupPrototype> TestBruteId = "TestBrute";
         [Test]
         public async Task Test()
         {

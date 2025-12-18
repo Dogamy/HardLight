@@ -81,8 +81,6 @@ public sealed class StationJobsTest
     private const int PlayerCount = 2000;
     private const int TotalPlayers = PlayerCount + CaptainCount;
 
-    private static readonly ProtoId<GameMapPrototype> FooStationId = "FooStation";
-
     [Test]
     public async Task AssignJobsTest()
     {

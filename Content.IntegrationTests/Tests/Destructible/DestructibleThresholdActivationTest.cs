@@ -19,7 +19,6 @@ namespace Content.IntegrationTests.Tests.Destructible
     [TestOf(typeof(DamageThreshold))]
     public sealed class DestructibleThresholdActivationTest
     {
-        private static readonly ProtoId<DamageTypePrototype> TestBluntId = "TestBlunt";
         [Test]
         public async Task Test()
         {
