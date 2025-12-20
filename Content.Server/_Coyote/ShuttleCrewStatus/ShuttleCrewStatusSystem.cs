@@ -49,7 +49,7 @@ public sealed class ShuttleCrewStatusSystem : EntitySystem
             return;
 
         // Skip non-player shuttles (asteroids, wrecks, etc.)
-        if (!shuttle.PlayerShuttle)
+        if ((component.Flags & IFFFlags.IsPlayerShuttle) == 0)
             return;
 
         // Add the crew status component to track this shuttle
