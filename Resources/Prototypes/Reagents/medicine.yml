@@ -165,7 +165,6 @@
     Medicine:
       effects:
       - !type:HealthChange
-        amount: 0.5
         damage:
           groups:
             Brute: -2.5 # Was 2, Buffed due to limb damage changes(GoobStation)
