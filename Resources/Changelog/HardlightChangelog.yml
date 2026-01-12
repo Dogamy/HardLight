@@ -348,3 +348,13 @@ Entries:
         two PDAs.
   id: 35
   time: '2026-01-10T12:49:09.0000000+00:00'
+- author: Makeshiftt
+  changes:
+    - type: Fix
+      message: >-
+        (Elkridge) Station Captains now have their correct job slot, and will
+        now spawn properly.
+    - type: Fix
+      message: (Elkridge) Misc. decal issues.
+  id: 36
+  time: '2026-01-12T21:22:37.0000000+00:00'
