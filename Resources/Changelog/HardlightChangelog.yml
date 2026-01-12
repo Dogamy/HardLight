@@ -358,3 +358,9 @@ Entries:
       message: (Elkridge) Misc. decal issues.
   id: 36
   time: '2026-01-12T21:22:37.0000000+00:00'
+- author: Generic-Eagle
+  changes:
+    - type: Tweak
+      message: Many minor changes to Eaglerock
+  id: 37
+  time: '2026-01-12T21:24:29.0000000+00:00'
