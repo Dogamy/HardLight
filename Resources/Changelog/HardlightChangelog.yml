@@ -443,3 +443,15 @@ Entries:
       message: Added Civilian Chameleon Clothes.
   id: 44
   time: '2026-01-15T05:09:48.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: Vox now have animated tail wagging similar to Reptilians.
+    - type: Add
+      message: Vox are now able to eat trash and drink welding fuel.
+    - type: Add
+      message: >-
+        Vox now have additional emote sounds; including coo, hiss, cough, sigh,
+        gasp, and more.
+  id: 45
+  time: '2026-01-15T18:11:58.0000000+00:00'
