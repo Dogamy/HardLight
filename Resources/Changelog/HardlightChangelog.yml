@@ -493,3 +493,11 @@ Entries:
       message: Fixed Cargo market system.
   id: 50
   time: '2026-01-16T20:50:19.0000000+00:00'
+- author: fenndragon
+  changes:
+    - type: Add
+      message: 'Added visual cue to radar at the 5K mark '
+    - type: Tweak
+      message: Changed shuttle AI behavior
+  id: 51
+  time: '2026-01-17T01:12:12.0000000+00:00'
